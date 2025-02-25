@@ -2,28 +2,33 @@
 
 A dashboard for automatically customizing and submitting job applications.
 
-## Features
+## 🚀 Features
 
 - **CV Customization**: Automatically tailors your CV based on job descriptions and keywords
 - **Keyword Extraction**: Uses NLP to identify important keywords from job descriptions
-- **Automated Submissions**: Submits applications to popular job portals (LinkedIn, Indeed, Glassdoor)
+- **Specialized Templates**: Includes templates for various technology roles
 - **Application Tracking**: Keeps a history of all applications submitted
-- **Credential Management**: Securely stores your job portal credentials
+- **PDF Generation**: Creates polished PDFs ready for submission
 
-## How It Works
+## 📋 Version 1.0 (Current)
 
-1. **Input Job Details**: Enter job information, including title, company, and description
-2. **CV Customization**: The system extracts keywords from the job description and customizes your CV
-3. **Automated Submission**: Optionally submits the application directly to the job portal
-4. **Application Tracking**: Records all submissions for future reference
+The current version focuses on CV customization and generation, with a roadmap for future enhancements:
 
-## Setup Instructions
+- ✅ CV customization based on job descriptions
+- ✅ Keyword extraction and matching
+- ✅ Multiple specialized templates
+- ✅ User-friendly interface
+- ✅ PDF generation and download
+
+See our [complete roadmap](docs/ROADMAP.md) for future development plans.
+
+## 🛠️ Setup Instructions
 
 ### Prerequisites
 
 - Python 3.8 or higher
-- Chrome browser (for automated submissions)
-- ChromeDriver (for Selenium)
+- Chrome browser (for automated submissions in future versions)
+- ChromeDriver (for Selenium in future versions)
 
 ### Installation
 
@@ -44,8 +49,8 @@ A dashboard for automatically customizing and submitting job applications.
    ```
 
 4. Add your CV templates to the `templates` directory in DOCX format.
-   - Use placeholders like `[JOB_TITLE]` and `[COMPANY]` in your templates
-   - Organize skills sections to easily match with job keywords
+   - We provide placeholder templates for 5 specialized roles
+   - See [template documentation](docs/TEMPLATES.md) for details
 
 ### Usage
 
@@ -54,43 +59,58 @@ A dashboard for automatically customizing and submitting job applications.
    streamlit run app.py
    ```
 
-2. Configure your job portal credentials in the sidebar
-3. Select a CV template
-4. Fill in the job details and description
-5. Choose whether to just customize your CV or also submit the application
-6. Click "Process Application"
-7. Download your customized CV and/or check the submission status
+2. Configure your settings in the sidebar
+3. Fill in the job details and description
+4. Click "Process Application"
+5. Download your customized CV
 
-## CV Templates
+## 📄 Documentation
 
-Create your CV templates in DOCX format with the following features:
+- [Parameter Configuration](docs/PARAMETERS.md) - Details on all configurable options
+- [CV Templates Guide](docs/TEMPLATES.md) - Information on included templates and creating your own
+- [Development Roadmap](docs/ROADMAP.md) - Future plans and features
 
-- Use `[JOB_TITLE]` and `[COMPANY]` placeholders where you want these to be inserted
-- Organize your skills and experience sections to make keyword matching effective
-- Include variations of common skills to increase matching probability
+## 🔮 Future Plans (See Roadmap)
 
-## Security Considerations
+- **Version 2.0**: Enhanced CV customization with machine learning
+- **Version 3.0**: Full application automation with job portal integration
+- **Version 4.0**: Complete career management suite
 
-- Credentials are stored locally in a `credentials.json` file
-- For better security, consider encrypting this file or using environment variables
-- The application runs entirely on your local machine
+## 🚩 Specialized Templates
 
-## Customization Options
+The system includes templates for these specialized roles:
+1. D365 Functional Consultant
+2. D365 Technical Consultant
+3. Data and Systems Architect
+4. Data Analytics and Reporting
+5. ML Research and Developer
 
-You can extend the functionality by:
+## 💻 Running on Streamlit
 
-1. Adding support for more job portals in `job_submitter.py`
-2. Enhancing the CV customization logic in `cv_customizer.py`
-3. Adding more advanced tracking and analytics features
+This application is built with Streamlit, which creates a local web server with a user-friendly interface. To make it accessible:
 
-## Troubleshooting
+### Local Network Access
 
-- If automated submissions fail, check that the selectors in `job_submitter.py` match the current website design
-- Job portal websites change frequently, so the automation scripts may need updates
-- For security reasons, some sites may block automated submissions
+```bash
+streamlit run app.py -- --server.headless=true --server.port=8501 --server.address=0.0.0.0
+```
 
-## Limitations
+### Cloud Deployment
 
-- Automated job submissions might not work on all portals due to CAPTCHA or other security measures
-- Some job applications require custom fields that cannot be automated
-- Job portal websites change their layouts frequently, which may break the automation
+For public access, you can deploy to [Streamlit Cloud](https://streamlit.io/cloud).
+
+## 🤝 Contributing
+
+We welcome contributions to improve the CV Application Automator. Please see our roadmap for areas where help is needed.
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🔒 Security Note
+
+Your credentials are stored locally in a JSON file. For better security, consider using environment variables or a secure credential manager.
+
+## 📊 Demo
+
+Start the application and navigate to the local Streamlit server to see a live demo of the CV customization process.
